@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget Management App</title>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,400&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container-fluid">
+      <span class="navbar-brand"> Budget Management </span>
+    </div>
+  </nav>
+  <!-- Main Content -->
+  <div class="container py-4">
+    <div class="text-center">
+      <h2 class="transaction-title">Your transactions</h2>
+      <p>0 transaction with a sum of $0.00
+    </div>
+    <div class="table-responsive-md">
+      <table class="table table-hover" id="transactions-table">
+        <thead>
+          <th>Transaction</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th> <button type="button" class="btn add-transaction-btn" data-mdb-toggle="modal"
+              data-mdb-target="#add-income-expense-modal">
+              Add Transaction
+            </button>
+          </th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Testing</td>
+            <td>$30.00</td>
+            <td>Test</td>
+            <td>
+              <button class="btn btn-primary"><i class="fas fa-pen"></i></button>
+              <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </table>
+    </div>
+
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="add-income-expense-modal" tabindex="-1" aria-labelledby="add-income-expense-modalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="add-income-expense-modalLabel">Add transaction</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex justify-content-center mb-3">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn income-expense-button selected-option">Expense</button>
+              <button type="button" class="btn income-expense-button off">Income</button>
+            </div>
+          </div>
+          <form>
+            <!-- Title input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="title-input" class="form-control" />
+              <label class="form-label" for="title-input">Title</label>
+            </div>
+
+            <!-- Amount input -->
+            <div class="form-outline mb-4">
+              <i class="fas fa-dollar-sign trailing"></i>
+              <input type="text" id="amount-input" class="form-control" />
+              <label class="form-label" for="amount-input">Amount</label>
+            </div>
+
+            <!-- Category input -->
+            <div class="form-outline mb-4">
+              <i class="fas fa-arrow-down trailing" id="select-toggle"></i>
+              <input type="text" id="category-input" class="form-control form-icon-trailing" />
+              <label class="form-label" for="category-input">Category</label>
+            </div>
+
+            <!-- Date Input -->
+            <div class="form-outline mb-4">
+              <i class="fas fa-calendar-day trailing" id="select-toggle"></i>
+              <input type="date" id="date-input" class="form-control" placeholder="Select date" />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="/scripts/script.js"></script>
+</body>
+
+</html>

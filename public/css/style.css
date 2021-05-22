@@ -1,0 +1,47 @@
+.navbar {
+    background: linear-gradient(to left, #373F51, #008DD5) !important;
+}
+
+.navbar-brand {
+    color: #fff;
+}
+
+.transaction-title {
+    color: #373F51;
+}
+
+.form-control:focus{
+    border-color: #008DD5 !important;
+    box-shadow: inset 0 0 0 1px #008DD5 !important;
+}
+
+#search-addon {
+    color: #008DD5;
+}
+
+.btn.add-transaction-btn,
+.btn.selected-option {
+    background-color: #008DD5;
+    color: #fff;
+}
+
+.btn.add-transaction-btn:hover,
+.btn.selected-option:hover {
+    background-color: #0074ad;
+    color: #fff;
+}
+
+.off:hover {
+    background-color: rgba(0, 141, 213, 0.1);
+}
+
+/* #title-input:focus,
+#amount-input:focus,
+#category-input:focus,
+#date-input:focus {
+    border-color: #008DD5 !important;
+    box-shadow: inset 0 0 0 1px #008DD5 !important;
+} */
+#date-input{
+    background-color: #fff
+}
