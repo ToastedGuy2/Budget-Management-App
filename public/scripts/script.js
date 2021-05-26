@@ -13,6 +13,5 @@ Array.from(document.querySelectorAll(".income-expense-button")).forEach(btn => {
             onBtn.classList.add("off")
             btn.classList.add("selected-option")
         };
-
     })
 });
