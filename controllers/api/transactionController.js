@@ -1,5 +1,5 @@
 const validator = require('validator')
-const Transaction = require('../models/transactionModel');
+const Transaction = require('../../models/transactionModel');
 
 exports.checkTransactionAddBody = (req, res, next) => {
     const {
@@ -62,6 +62,7 @@ exports.getAllTransactions = async (req, res) => {
             transactions
         }
     })
+    res.s
 }
 exports.getTransaction = async (req, res) => {
     try {

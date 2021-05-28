@@ -6,7 +6,7 @@ const {
     addTransaction,
     updateTransaction,
     deleteTransaction
-} = require("../controllers/transactionController");
+} = require("../controllers/api/transactionController");
 
 const transactionRouter = express.Router();
 transactionRouter.route("/").get(getAllTransactions).post(checkTransactionAddBody, addTransaction);

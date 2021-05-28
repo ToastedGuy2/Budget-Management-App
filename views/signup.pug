@@ -1,0 +1,48 @@
+doctype
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        //- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+
+        title Sign up..
+        //- Bootstrap core CSS
+        link(href='/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet')
+        //- Font Awesome
+        //- link(href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" rel="stylesheet" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous")
+        //- Custom CSS 
+        link(href='/css/login.css' rel='stylesheet')
+
+    body
+        .d-flex.justify-content-center.align-items-center.wrapper
+            form(method='post' action='/signup' enctype="multipart/form-data" id="form" class='py-3 px-4 rounded-2 shadow my-5' )
+                h1.text-center.mb-4 Sign up 
+                .row.mb-3 
+                    .col 
+                        label(for="firstName-input" class="form-label") First name
+                        //- input(type="text" class="form-control" id="first-name-input" name="firstName" placeholder="Bill")
+                        input(type="text" class=firstName ? "form-control is-invalid" : "form-control" id="first-name-input" name="firstName" placeholder="Bill")
+                        .invalid-feedback=firstName ? firstName.message : ''
+                    .col 
+                        label(for="lastName-input" class="form-label") Last name
+                        input(type="text" class=lastName ? "form-control is-invalid" : "form-control" id="last-name-input" name="lastName" placeholder="Gates")
+                        .invalid-feedback=lastName ? lastName.message : ''
+                .mb-3
+                    label(for="email-input" class="form-label") Email
+                    input(type="email" class=email ? "form-control is-invalid" : "form-control" id="email-input" name="email" placeholder="bill@gates.com")
+                    .invalid-feedback=email ? email.message : ''
+                .mb-3
+                    label(for="password-input" class="form-label") Password
+                    input(type="password" class=password ? "form-control is-invalid" : "form-control" id="password-input" name="password" placeholder="**********")
+                    .invalid-feedback=password ? password.message : ''
+                .mb-3
+                    label(for="passwordConfirmation-input" class="form-label") Confirm Password
+                    input(type="password" class=passwordConfirmation ? "form-control is-invalid" : "form-control" id="passwordConfirmation-input" name="passwordConfirmation" placeholder="**********")
+                    .invalid-feedback=passwordConfirmation ? passwordConfirmation.message : ''
+                .text-end.mb-3
+                    small
+                        a(href="/login" class="text-muted") Already registered? Log in here
+                button(type="submit" class="btn btn-primary w-100") Submit
+        //- Bootstrap JS
+        script(src='/bootstrap/dist/js/bootstrap.bundle.min.js')  
